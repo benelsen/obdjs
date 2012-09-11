@@ -1,0 +1,24 @@
+{
+  "name": "obdjs",
+  "version": "0.0.1",
+  "description": "Utility to read OBD2 data from a car",
+  "main": "obd.js",
+  "dependencies": {
+    "serialport": "~1.0.7",
+    "async": "~0.1.22"
+  },
+  "devDependencies": {
+    
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": "",
+  "keywords": [
+    "OBD",
+    "car",
+    "serial"
+  ],
+  "author": "Ben Elsen",
+  "license": "GPL"
+}
