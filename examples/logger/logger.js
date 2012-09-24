@@ -1,13 +1,10 @@
+#!/usr/bin/env node
+
 var OBDReader = require('../../index'),
     fs        = require('fs'),
-    sugar     = require('sugar'),
-    _         = require('underscore');
-    
-    _.string  = require('underscore.string');
-    
-    _.mixin( _.string.exports() );
+    sugar     = require('sugar');
 
-var obdr = new OBDReader('/dev/ttys002');
+var obdr = new OBDReader('/dev/ttys003');
 
 // Handle Interrupts / Signals
 process.on('SIGINT', function() {
@@ -99,6 +96,13 @@ var convert = {
   }
 };
 
+var chop = function(str, step){
+  if (str == null) return [];
+  str = String(str);
+  step = ~~step;
+  return step > 0 ? str.match(new RegExp('.{1,' + step + '}', 'g')) : [str];
+};
+
 /* **** */
 
 // Connect to the OBDII-Reader 
@@ -143,7 +147,7 @@ var repeat = setInterval( function() {
           var time  = new Date().toISOString();
           var key   = keys[ data.res.substr(2,2) ];
           
-          var hex = _.chop(data.res.substr(4),2);
+          var hex = chop(data.res.substr(4),2);
           
           var value = convert[data.res.substr(2,2)](hex);
           
