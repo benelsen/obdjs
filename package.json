@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:benelsen/obdjs.git"
+    "url": "git://github.com:benelsen/obdjs.git"
   },
   "dependencies": {
     "serialport": "~1.0.7",
@@ -17,7 +17,10 @@
   },
   "devDependencies": {
   },
-  "main": "./obd",
+  "main": "index",
+  "engines": {
+    "node": "*"
+  },
   "scripts": {
     "test": ""
   },
@@ -26,5 +29,5 @@
     "car",
     "serial"
   ],
-  "license": "GPL"
+  "license": "MIT"
 }
