@@ -12,8 +12,8 @@
     "url": "git://github.com:benelsen/obdjs.git"
   },
   "dependencies": {
-    "serialport": "~1.0.7",
-    "async": "~0.1.22"
+    "serialport": "~1.1.0",
+    "async": "~0.2.6"
   },
   "devDependencies": {
   },
